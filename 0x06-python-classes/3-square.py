@@ -12,7 +12,7 @@ class Square:
             size (int): The size of the square.
         """
         super().__init__()
-        if not isinstance(size, int):
+        if type(size) is not int:
             raise TypeError('size must be an integer')
         else:
             if size < 0:
