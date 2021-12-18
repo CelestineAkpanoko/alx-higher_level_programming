@@ -18,11 +18,12 @@ if __name__ == '__main__':
         cur = =db_conn.cursor()
         state_name = sys.argv[4]
         cur.execute(
-                'SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC;',
+                'SELECT * FROM states WHERE name CAST(name AS BINARY) ' + 
+                'ORDER BY id ASC;',
                 [state_name]
                 )
-        states = cur.fetchall()
-        for state in states:
-            print(state)
+        results = cur.fetchall()
+        for result in results:
+            print(resiult)
         db_conn.close()
 
