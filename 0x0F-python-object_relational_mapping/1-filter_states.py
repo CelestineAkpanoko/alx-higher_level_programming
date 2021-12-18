@@ -15,7 +15,7 @@ if __name__ == '__main__':
                 )
         cur = db_conn.cursor()
         cur.execute(
-                'SELECT * FROM states WHERE name LIKE "N%" ' + 
+                'SELECT * FROM states WHERE name IS NOT NULL AND LIKE "N%" ' + 
                 'ORDER BY states.id ASC;'
                 )
         results = cur.fetchall()
