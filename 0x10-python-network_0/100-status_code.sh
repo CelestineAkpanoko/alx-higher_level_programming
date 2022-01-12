@@ -1,3 +1,3 @@
 #!/bin/bash
 # Retrieves the status code of a response from a URL
-curl -o - "$1"
+curl -s -o -w "%{http_code}" "$1"
